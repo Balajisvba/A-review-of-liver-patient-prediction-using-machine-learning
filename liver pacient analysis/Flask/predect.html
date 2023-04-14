@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>predict</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    max-width: 650px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 28px;
+    margin: 0 28px;
+    border-radius: 10px;
+    box-shadow: inset -2px 2px 2px white;
+}
+
+.form-title{
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 6px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    border-bottom: solid 1px white;
+}
+
+.main-user-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    
+}
+
+.user-input-box:nth-child(2n){
+    justify-content: end;
+}
+
+.user-input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.user-input-box label{
+    width: 95%;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.user-input-box input{
+    height: 40px;
+    width: 95%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+
+
+
+
+.form-submit-btn{
+    margin-top: 40px;
+}
+
+.form-submit-btn input{
+    display: block;
+    width: 100%;
+    margin-left: 150px;
+    font-size: 20px;
+    padding: 10px;
+    border:none;
+    border-radius: 5px;
+    color: rgb(209, 209, 209);
+    background: rgba(63, 114, 76, 0.7);
+}
+
+.form-submit-btn input:hover{
+    background: rgba(56, 204, 93, 0.7);
+    color: rgb(255, 255, 255);
+}
+
+@media(max-width: 600px){
+    .container{
+        min-width: 280px;
+    }
+
+    .user-input-box{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .user-input-box:nth-child(2n){
+        justify-content: space-between;
+    }
+
+    
+
+    .main-user-info{
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .main-user-info::-webkit-scrollbar{
+        width: 0;
+    }
+}
+</style>
+  <body>
+    <div class="container">
+      <h1 class="form-title">Liver Patient Prediction</h1>
+      <form action="/prec" method="post">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="age">Age</label>
+            <input type="text"
+                    id="age"
+                    name="age"
+                    placeholder="Enter Age"/>
+          </div>
+          <div class="user-input-box">
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+     </select>
+          </div>
+          <div class="user-input-box">
+            <label for="tb">Total_Bilirubin</label>
+            <input type="text" id="tb" name="tb" placeholder="Enter Total_Bilirubin"/>
+          </div>
+          <div class="user-input-box">
+            <label for="db">Direct_Bilirubin</label>
+            <input type="text" id="db" name="db" placeholder="Enter Direct_Bilirubin"/>
+          </div>
+          <div class="user-input-box">
+            <label for="ap">Alkaline_Phosphotase</label>
+            <input type="text" id="ap" name="ap" placeholder="Enter Alkaline_Phosphotase"/>
+          </div>
+          <div class="user-input-box">
+            <label for="aa">Alamine_Aminotransferase</label>
+            <input type="text" id="aa" name="aa" placeholder="Enter Alamine_Aminotransferase"/>
+          </div>
+<div class="user-input-box">
+            <label for="aspa">Aspatate_Aminotransferase</label>
+            <input type="text" id="aspa" name="aspa" placeholder="Enter Aspatate_Aminotransferase"/>
+          </div>
+<div class="user-input-box">
+           <label for="tp">Total_Protiens</label>
+            <input type="text" id="tp" name="tp" placeholder="Enter Total_Protiens"/>
+          </div>
+<div class="user-input-box">
+            <label for="albumin">Albumin</label>
+            <input type="text" id="albumin" name="albumin" placeholder="Enter Albumin"/>
+          </div>
+<div class="user-input-box">
+             <label for="agr">Albumin_And_Globulim_Ratio</label>
+            <input type="text" id="agr" name="agr" placeholder="Enter Albumin_And_Globulim_Ratio"/>
+          </div>
+<a href="/home" class="button">home</a>
+
+            <div class="form-submit-btn">
+           <input type="submit" value="predict" >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
